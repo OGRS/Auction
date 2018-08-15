@@ -1,0 +1,16 @@
+.container .nav .nav-item .btn-link {
+  text-decoration: none !important;
+  font-size: 15pt;
+  color: #007d61;
+}
+
+  .container .nav .nav-item .btn-link small {
+    color: gray;
+  }
+
+  .container {
+  border: 1px solid #9d9999;
+  border-radius: 20px;
+  background-color: #f8f9fa;
+  margin-bottom: 3%;
+}

@@ -1,0 +1,86 @@
+<div *ngIf="isParentExist == true" class="category card">
+  <div class="card-header">
+    <b>{{parentFirstWordOfName}}</b><br><small>{{parentOtherWordsOfName}}</small>
+  </div>
+  <div *ngIf="isParent == false" class="card-body">
+    <ul class="nav flex-column">
+      <li *ngFor="let category of categories" [routerLink]="['/category', category.Id]"
+          (click)="getCategory(category.Name)" class="nav-item">
+        <button type="button" class="btn btn-link">
+          {{category.Name}}
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="params card">
+  <div class="card-header">
+    <b>Параметры</b>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Выставлены за: </label>
+      <select class="form-control col-md-7">
+        <option>Выбрать</option>
+        <option>1 час</option>
+        <option>2 часа</option>
+        <option>3 часа</option>
+        <option>4 часа</option>
+        <option>5 часов</option>
+        <option>6 часов</option>
+        <option>12 часов</option>
+        <option>24 часа</option>
+        <option>1 день</option>
+        <option>2 дня</option>
+        <option>3 дня</option>
+        <option>4 дня</option>
+        <option>5 дней</option>
+        <option>6 дней</option>
+        <option>7 дней</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Завершаются за: </label>
+      <select class="form-control col-md-7">
+        <option>Выбрать</option>
+        <option>1 час</option>
+        <option>2 часа</option>
+        <option>3 часа</option>
+        <option>4 часа</option>
+        <option>5 часов</option>
+        <option>6 часов</option>
+        <option>12 часов</option>
+        <option>24 часа</option>
+        <option>1 день</option>
+        <option>2 дня</option>
+        <option>3 дня</option>
+        <option>4 дня</option>
+        <option>5 дней</option>
+        <option>6 дней</option>
+        <option>7 дней</option>
+      </select>
+    </div>
+
+    <form #SearchForm="ngForm" (ngSubmit)="Serch()" class="SearchForm">
+      <div class="form-group">
+        <label>Цена: </label>
+        <div class="form-inline">
+          <input type="number" class="form-control col-md-4" placeholder="от">
+          &nbsp;&mdash;&nbsp;
+          <input type="number" class="form-control col-md-4" placeholder="до">
+          &nbsp;грн.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Местоположение: </label>
+        <input type="text" class="form-control col-md-11" placeholder="Населенный пункт">
+      </div>
+      <div class="form-group row">
+        <div class="col-md-12">
+          <button type="submit" id="Search" class="btn btn-light float-right">Найти</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

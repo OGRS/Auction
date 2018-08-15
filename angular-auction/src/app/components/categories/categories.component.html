@@ -1,0 +1,10 @@
+<div class="container">
+  <ul class="nav justify-content-center">
+    <li *ngFor="let category of categories" [routerLink]="['/category', category.Id]"
+      (click)="getCategory(category.FirstWordOfName, category.OtherWordsOfName)" class="nav-item btn-light">
+      <button type="button" class="btn btn-link"> 
+        <b>{{category.FirstWordOfName}}</b><br><small>{{category.OtherWordsOfName}}</small>
+      </button>
+    </li>
+  </ul>
+</div>

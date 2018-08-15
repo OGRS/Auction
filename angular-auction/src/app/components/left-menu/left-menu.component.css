@@ -1,0 +1,45 @@
+.card {
+  padding: 0;
+}
+
+.card .card-body {
+  padding: 0;
+}
+
+.category{
+  margin-bottom: 5%;
+}
+
+.card .card-body .form-group{
+  padding: 0px 12px;
+  margin-top: 16px;
+}
+
+.card .card-body .form-group .form-control{
+  margin-left: 10px;
+}
+
+.SearchForm {
+  border-top: 1px solid #dfdfdf;
+}
+
+.card .card-header small {
+  color: gray;
+}
+
+.card .card-header {
+  font-size: 14pt;
+  color: #007d61;
+}
+
+.card .card-body .btn-link {
+  text-decoration: none !important;
+  font-size: 12pt;
+  color: #031500;
+  white-space: normal;
+  text-align: left;
+}
+
+.card .card-body li:hover {
+  background-color: #d8d8d8;
+}

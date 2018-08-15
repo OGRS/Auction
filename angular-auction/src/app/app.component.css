@@ -1,0 +1,13 @@
+/*h1, h2 {
+  margin: 0;
+}
+
+:host {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column {
+  width: 300px;
+}*/
