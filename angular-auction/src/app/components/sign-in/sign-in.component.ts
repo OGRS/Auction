@@ -8,8 +8,10 @@ import { Router } from '@angular/router';
   templateUrl: 'sign-in.component.html',
   styleUrls: ['sign-in.component.css']
 }) export class SignInComponent implements OnInit {
+
   Error: string;
   isLoginError: boolean = false;
+
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {

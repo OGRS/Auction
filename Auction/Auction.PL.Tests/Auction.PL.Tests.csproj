@@ -103,6 +103,7 @@
     <Compile Include="Controllers\ValuesControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
