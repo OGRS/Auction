@@ -14,7 +14,7 @@
         <a class="nav-link" href="/">Кабинет {{userName}}</a>
       </li>
       <li class="nav-item" *ngIf="isLogin == true">
-        <a class="nav-link" href="#">Продать</a>
+        <a class="nav-link" href="/lot/create">Продать</a>
       </li>
       <li class="nav-item" *ngIf="isLogin == true">
         <a class="nav-link" href="/" (click)="Exit()">Выход</a>

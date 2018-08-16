@@ -1,0 +1,76 @@
+<div class="card mx-auto col-sm-6" style="padding: 0; margin-bottom: 5%;">
+  <div class="card-header text-center">
+    <h5>Auction</h5>
+    <small>Создание лота</small>
+  </div>
+  <div class="card-body">
+    <!--<div class="alert alert-danger" role="alert">
+      {{Error}}
+    </div>-->
+    <form #creatingLotForm="ngForm" (ngSubmit)="OnSubmit()">
+      <div class="form-group">
+        <label>Заголовок*</label>
+        <input type="text" class="form-control" #Name ngModel name="Name" required>
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <label>Категория*</label>
+          <select class="form-control" #Category ngModel name="Category" required>
+            <option><!--{{category.Name}}--></option>
+          </select>
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Время аукциона*</label>
+          <select class="form-control" #Lifetime ngModel name="Lifetime" required>
+            <option>1 час</option>
+            <option>2 часа</option>
+            <option>3 часа</option>
+            <option>4 часа</option>
+            <option>5 часов</option>
+            <option>6 часов</option>
+            <option>12 часов</option>
+            <option>24 часа</option>
+            <option>1 день</option>
+            <option>2 дня</option>
+            <option>3 дня</option>
+            <option>4 дня</option>
+            <option>5 дней</option>
+            <option>6 дней</option>
+            <option>7 дней</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <label>Цена*</label>
+          <input type="number" class="form-control" #Price ngModel name="Price" required>
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Шаг*</label>
+          <input type="number" class="form-control" #Step ngModel name="Step" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <label>Фотография</label>
+          <input type="file" class="form-control-file">
+          <small>Только jpg/png</small>
+        </div>
+        <div class="form-group col-sm-6">
+          <label>Местоположение*</label>
+          <input type="text" class="form-control" #Name ngModel name="Name" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Описание</label>
+        <textarea class="form-control"></textarea>
+      </div>
+      <button type="submit" [disabled]="!creatingLotForm.valid"
+              class="btn btn-block btn-primary">
+        Отправить
+      </button>
+    </form>
+  </div>
+</div>
+
+

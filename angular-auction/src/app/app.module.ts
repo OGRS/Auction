@@ -16,9 +16,11 @@ import { CategoryService } from './services/category.service';
 import { LotsComponent } from './components/Lots/Lots.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { LeftMenuComponent } from './components/left-menu/left-menu.component';
+import { CreateLotComponent } from './components/create-lot/create-lot.component';
 
 const appRoutes: Routes = [
   { path: '', component: LotsComponent },
+  { path: 'lot/create', component: CreateLotComponent },
   { path: 'category/:id', component: LotsComponent },
   { path: 'login', component: SignInComponent },
   { path: 'registration', component: SignUpComponent }
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
+    CreateLotComponent,
     LotsComponent,
     LeftMenuComponent,
     CategoriesComponent,
