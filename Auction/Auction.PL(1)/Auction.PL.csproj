@@ -272,6 +272,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImageOfLotModel.cs" />
     <Compile Include="Models\LotModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Ninject\NinjectResolver.cs" />
