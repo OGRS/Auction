@@ -9,6 +9,8 @@ namespace Auction.DAL.Entities
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Location { get; set; }
+        public decimal Step { get; set; }
+        public string Description { get; set; }
        
         public int UserId { get; set; }
         public string UserName { get { return User.Name; } }

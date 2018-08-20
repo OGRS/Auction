@@ -51,6 +51,7 @@
     <Compile Include="EF\StoreDbInitializer.cs" />
     <Compile Include="Entities\Bet.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\ImageOfLot.cs" />
     <Compile Include="Entities\Lot.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Interfaces\IGenericRepository.cs" />
