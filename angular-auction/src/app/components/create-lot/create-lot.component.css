@@ -1,0 +1,23 @@
+.card .card-body .btn-link {
+  text-decoration: none !important;
+  font-size: 12pt;
+  color: #031500;
+  white-space: normal;
+  text-align: left;
+}
+
+.modal-body .card .card-body li:hover {
+  background-color: #d8d8d8;
+}
+
+.active {
+  background-color: #d8d8d8;
+}
+
+.selectedCategories {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+  list-style-type: none;
+  margin-bottom: 10px;
+}
