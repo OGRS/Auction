@@ -5,8 +5,8 @@
   </div>
   <div class="card-body">
     <!--<div class="alert alert-danger" role="alert">
-      {{Error}}
-    </div>-->
+    {{Error}}
+  </div>-->
     <form #creatingLotForm="ngForm" (ngSubmit)="OnSubmit()">
       <div class="form-group">
         <label>Заголовок*</label>
@@ -15,9 +15,23 @@
       <div class="row">
         <div class="form-group col-sm-6">
           <label>Категория*</label>
-          <select class="form-control" #Category ngModel name="Category" required>
-            <option><!--{{category.Name}}--></option>
+          <select *ngIf="isCategorySelected == false" class="form-control"
+                  data-toggle="modal" data-target="#selectCategory"
+                  (click)="getCategories()">
           </select>
+          <div *ngIf="isCategorySelected == true">
+            <ul class="selectedCategories">
+              <li *ngFor="let category of activeCategory; let i = index"
+                  [style.padding-left.em]="i*1.5" required>
+                {{category.Name}}
+              </li>
+            </ul>
+            <button type="button" class="btn btn-block btn-primary btn-sm"
+                    data-toggle="modal" data-target="#selectCategory"
+                    (click)="getCategories()">
+              Изменить
+            </button>
+          </div>
         </div>
         <div class="form-group col-sm-6">
           <label>Время аукциона*</label>
@@ -58,18 +72,87 @@
         </div>
         <div class="form-group col-sm-6">
           <label>Местоположение*</label>
-          <input type="text" class="form-control" #Name ngModel name="Name" required>
+          <input type="text" class="form-control" #Location ngModel name="Location" required>
         </div>
       </div>
       <div class="form-group">
         <label>Описание</label>
         <textarea class="form-control"></textarea>
       </div>
-      <button type="submit" [disabled]="!creatingLotForm.valid"
-              class="btn btn-block btn-primary">
+      <button [disabled]="isCategorySelected == false || creatingLotForm.invalid"
+              type="submit" class="btn btn-block btn-primary">
         Отправить
       </button>
     </form>
+    <div class="modal fade" id="selectCategory" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Выбор категории</h5>
+            <button type="button" class="close" id="closeModal" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form (ngSubmit)="changePredicate(true)">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="card">
+                    <div class="card-body" style="padding: 0;">
+                      <ul class="nav flex-column">
+                        <li [ngClass]="{'active': activeCategory[0] == category}"
+                            *ngFor="let category of categories[0]"
+                            (click)="getCategoryParent(category, 1)" class="nav-item">
+                          <button type="button" class="btn btn-link">
+                            {{category.Name}}
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div *ngIf="isChildsExist[0] == true" class="card">
+                    <div class="card-body" style="padding: 0;">
+                      <ul class="nav flex-column">
+                        <li [ngClass]="{'active': activeCategory[1] == category}"
+                            *ngFor="let category of categories[1]"
+                            (click)="getCategoryParent(category, 2)" class="nav-item">
+                          <button type="button" class="btn btn-link">
+                            {{category.Name}}
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div *ngIf="isChildsExist[1] == true" class="card">
+                    <div class="card-body" style="padding: 0;">
+                      <ul class="nav flex-column">
+                        <li [ngClass]="{'active': activeCategory[2] == category}"
+                            *ngFor="let category of categories[2]"
+                            (click)="getCategoryParent(category, 3)" class="nav-item">
+                          <button type="button" class="btn btn-link">
+                            {{category.Name}}
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" [disabled]="selectedCategory == null"
+                      class="btn btn-primary">
+                Дальше
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
